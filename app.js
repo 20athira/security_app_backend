@@ -8,11 +8,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://akshaykj:akshaykj@cluster0.3vob5wn.mongodb.net/securityDb?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://AthiraRam:athira235@cluster0.orujzdx.mongodb.net/securitydb?retryWrites=true&w=majority",{
     useNewUrlParser :true
 })
 
-app.use("/security",userRouter)
+app.use("/api/security",userRouter)
 //app.use("/post",postRouter)
 
 app.listen("3001",()=>{

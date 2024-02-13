@@ -1,7 +1,8 @@
 const express =require("express")
-const signUpModels =require("../model/signUpModel")
+//const signUpModels =require("../model/usermodel")
 const bcrypt =require("bcryptjs")
-//const { request } = require("http")
+const usermodel = require("../model/usermodel")
+const { request } = require("http")
 
 
 const router = express.Router()
@@ -20,7 +21,7 @@ router.post("/signup", async(req,res)=>{
                 data.password=hashedPassword
                 console.log(data)
                 
-                 let user =new signUpModels(data)
+                 let user =new usermodel(data)
                 let result =user.save()
                 
                 res.json({status:"success"})
